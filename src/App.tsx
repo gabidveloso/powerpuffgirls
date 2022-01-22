@@ -1,25 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { applyMiddleware, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import { Normalize } from 'styled-normalize';
+import thunkMiddleware from 'redux-thunk';
+import GlobalStyles from './GlobalStyles.style';
+import NotFound from './views/notFound/NotFound';
+import reducer from './store/reducers';
+import Home from './views/home/Home';
+import List from './components/list/List';
+import Detail from './views/detail/Detail';
 
 function App() {
+  const store = createStore(reducer, applyMiddleware(thunkMiddleware));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Normalize />
+        <GlobalStyles />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:season/:episode" element={<Detail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <List />
+      </div>
+    </Provider>
   );
 }
 
