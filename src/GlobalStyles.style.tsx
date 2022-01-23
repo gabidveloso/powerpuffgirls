@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     --secondary: 327, 100%, 57%;
     --black: 60, 13%, 9%;
     --white: 36, 100%, 99%;
+    --pure_black: 0, 0%, 0%;
 
       /* Fonts size */
     --notfound_title_font: 6rem;  
@@ -16,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
     --header_font: 5rem;
     --subtitle_font: 2.6rem;
     --button_font: 1.8rem;
+    --medium_font: 1.6rem;
+    --small_font: 1.4rem;
 
     /* Font Family */
     --font_primary: 'Outfit', sans-serif;

@@ -14,7 +14,7 @@ export interface IAction {
  * Action Initial State
  */
 export interface IGlobalState {
-  show: IShow | null;
+  show: IShow | {};
   seasons: ISeasons[];
   episodes: IEpisodes[];
 }

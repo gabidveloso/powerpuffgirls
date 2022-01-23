@@ -12,7 +12,7 @@ export function fetchDataShow() {
 
       dispatch(fetchShow(data));
     } catch (error) {
-      dispatch(fetchShow(null));
+      dispatch(fetchShow({}));
     }
   };
 }

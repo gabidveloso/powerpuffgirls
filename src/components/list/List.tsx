@@ -6,13 +6,19 @@ import { fetchDataEpisodes, fetchDataSeasons } from '../../store/fetchData';
 import ListStyle from './List.style';
 
 function List() {
+  // Get global state from redux
   const globalState = useSelector((state) => state) as IGlobalState;
   const dispatch = useDispatch();
 
+  // Get Url params
   const { season, episode } = useParams();
 
+  // Initial State of seasonAtive
   const [seasonAtive, setSeasonAtive] = useState(season || '1');
 
+  /**
+   * Compononent Did Mount
+   */
   useEffect(() => {
     dispatch(fetchDataSeasons());
     dispatch(fetchDataEpisodes());

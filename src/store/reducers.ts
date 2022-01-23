@@ -6,7 +6,7 @@ import {
 } from './constants';
 
 const initialState: IGlobalState = {
-  show: null,
+  show: {},
   seasons: [],
   episodes: [],
 };

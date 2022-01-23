@@ -8,7 +8,7 @@ import { IShow } from '../interfaces/Show';
 import { ISeasons } from '../interfaces/Seasons';
 import { IEpisodes } from '../interfaces/Episodes';
 
-export function fetchShow(data: IShow | null) {
+export function fetchShow(data: IShow | {}) {
   return {
     type: FETCH_DATA_SHOW,
     payload: {
