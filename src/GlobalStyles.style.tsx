@@ -1,20 +1,23 @@
+// Import Packages
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 
-
+/* Set CSS Varibles */
 :root{
     /* Set project colours */
-    --primary: 336, 21%, 30%;
+    --primary: 333, 25%, 46%;
     --secondary: 327, 100%, 57%;
     --black: 60, 13%, 9%;
-    --white: 36, 100%, 99%;
     --pure_black: 0, 0%, 0%;
+    --grey: 60, 3%, 17%;
+    --white: 36, 100%, 99%;
 
       /* Fonts size */
     --notfound_title_font: 6rem;  
     --notfound_description_font: 2.2rem;
     --header_font: 5rem;
+    --sub_header_font: 3rem;
     --subtitle_font: 2.6rem;
     --button_font: 1.8rem;
     --medium_font: 1.6rem;
@@ -48,22 +51,10 @@ export default GlobalStyles;
 
 /* Media Queries Sizes */
 const size = {
-  mobileS: '320px',
-  mobileM: '375px',
   mobileL: '425px',
   tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px',
 };
-
 export const device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
   mobileL: `(max-width: ${size.mobileL})`,
   tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
-  desktopL: `(max-width: ${size.desktop})`,
 };

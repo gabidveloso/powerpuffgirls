@@ -1,27 +1,21 @@
+// Import Packages
 import React from 'react';
+
+// Import Interface
 import { IDetailInfo } from '../../interfaces/DeatailInfo';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { Link, useParams } from 'react-router-dom';
-// import { IGlobalState } from '../../interfaces/Store';
-// import { fetchDataEpisodes, fetchDataSeasons } from '../../store/fetchData';
+
+// Import Styled Components
 import DetailInfoStyle from './DetailInfo.style';
 import RatingStyle from './Rating.style';
 import TitleStyle from './Title.style';
+import SeparatorBallStyle from '../SeparatorBall/SeparatorBallStyle';
+import InfoDescriptionStyle from './InfoDescriptionStyle';
+import SubInfoStyle from '../SubInfoStyle/SubInfoStyle';
+
+// Import local Image
 import { ReactComponent as ReactStar } from '../../images/star.svg';
-import SubInfoStyle from './SubInfoStyle';
 
 function DetailInfo(props: IDetailInfo) {
-  //   const {
-  //     name,
-  //     backgroundImage,
-  //     rating,
-  //     startYear,
-  //     endYear,
-  //     genres,
-  //     exhibitionDate,
-  //     epNumber,
-  //     season,
-  //   } = props;
   const {
     name,
     backgroundImage,
@@ -31,6 +25,8 @@ function DetailInfo(props: IDetailInfo) {
     epNumber,
     exhibitionDate,
     season,
+    genres,
+    summary,
   } = props;
 
   return (
@@ -45,32 +41,42 @@ function DetailInfo(props: IDetailInfo) {
       </div>
 
       <div className="info">
-        <TitleStyle>{name}</TitleStyle>
-        <div className="line">
-          {rating !== '' && (
-            <RatingStyle>
-              <ReactStar />
-              <div className="rating-value">
-                <span className="actual">{rating}</span>
-                <span className="max">/10</span>
-              </div>
-            </RatingStyle>
-          )}
+        <div className="info-header">
+          <TitleStyle>{name}</TitleStyle>
+          <div className="line">
+            {rating !== '' && (
+              <RatingStyle>
+                <ReactStar />
+                <div className="rating-value">
+                  <span className="actual">{rating}</span>
+                  <span className="max">/10</span>
+                </div>
+              </RatingStyle>
+            )}
 
-          <div className="date-season">
-            <SubInfoStyle>
-              {exhibitionDate || `${startYear} - ${endYear}`}
-            </SubInfoStyle>
+            <div className="date-season">
+              <SubInfoStyle>
+                {exhibitionDate || `${startYear} - ${endYear}`}
+              </SubInfoStyle>
 
-            <div className="separtor" />
+              <SeparatorBallStyle />
 
-            <SubInfoStyle>
-              {epNumber ? `Season ${season}` : `${season} Seasons`}
-            </SubInfoStyle>
+              <SubInfoStyle>
+                {epNumber ? `Season ${season}` : `${season} Seasons`}
+              </SubInfoStyle>
+            </div>
           </div>
+
+          {genres?.length !== 0 && (
+            <div className="line genres">
+              {genres?.map((item) => (
+                <SubInfoStyle key={item}>{item}</SubInfoStyle>
+              ))}
+            </div>
+          )}
         </div>
-        <span>{startYear}</span>
-        <span>{endYear}</span>
+
+        <InfoDescriptionStyle dangerouslySetInnerHTML={{ __html: summary }} />
       </div>
     </DetailInfoStyle>
   );

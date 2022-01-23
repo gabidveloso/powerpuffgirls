@@ -1,4 +1,7 @@
+// Import Packages
 import styled from 'styled-components';
+
+// Import Device sizes set in global style
 import { device } from '../../GlobalStyles.style';
 
 const NotFoundStyle = styled.section`
@@ -72,6 +75,7 @@ const NotFoundStyle = styled.section`
     }
   }
 
+  /* Set Media Queries */
   @media ${device.tablet} {
     .left {
       width: 100%;

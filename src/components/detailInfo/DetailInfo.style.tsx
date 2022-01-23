@@ -1,11 +1,15 @@
+// Import Packages
 import styled from 'styled-components';
+
+// Import Device sizes set in global style
+import { device } from '../../GlobalStyles.style';
 
 const DetailInfoStyle = styled.section`
   display: flex;
   align-items: flex-end;
   background-color: hsl(var(--pure_black));
   position: relative;
-  height: 48rem;
+  min-height: 48rem;
 
   /* background image style */
   .background-img {
@@ -19,6 +23,8 @@ const DetailInfoStyle = styled.section`
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
+        padding: 0;
       }
     }
 
@@ -41,20 +47,63 @@ const DetailInfoStyle = styled.section`
 
   .info {
     z-index: 1;
+    width: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .info-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
 
     .line {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
 
-      .date-season {
-        display: flex;
-        gap: 0.6rem;
+      &.genres {
+        gap: 0.2;
 
-        .separtor {
-          background: var() (hsl);
+        span {
+          position: relative;
+          &:not(:last-child) {
+            ::before {
+              content: ',';
+              position: absolute;
+              right: -0.5rem;
+              color: hsl(var(--white));
+            }
+          }
         }
       }
+
+      .date-season {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+    }
+  }
+
+  /* Set Media Queries */
+  @media ${device.tablet} {
+    display: flex;
+    flex-direction: column;
+    .background-img {
+      position: relative;
+      height: 24rem;
+      max-height: 40vh;
+
+      img {
+        object-position: center;
+      }
+    }
+    .info {
+      background-color: hsl(var(--grey));
     }
   }
 `;

@@ -6,6 +6,7 @@ import { IImage } from './Show';
 export interface IDetailInfo {
   name: string;
   backgroundImage: IImage;
+  summary: string;
   rating?: string;
   startYear?: string;
   endYear?: string;

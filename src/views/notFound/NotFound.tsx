@@ -1,7 +1,12 @@
+// Import Packages
 import React from 'react';
+
+// Import Styled Components
 import NotFoundStyle from './NotFound.style';
-import NotFoundImage from '../../images/not-found.png';
 import ButtonStyle from './Button.style';
+
+// Import Image
+import NotFoundImage from '../../images/not-found.png';
 
 function NotFound() {
   return (

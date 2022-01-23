@@ -1,8 +1,11 @@
+// Import Packages
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Normalize } from 'styled-normalize';
-import GlobalStyles from './GlobalStyles.style';
 import Router from './Router';
+
+// Import Styles
+import GlobalStyles from './GlobalStyles.style';
 
 ReactDOM.render(
   <React.StrictMode>
