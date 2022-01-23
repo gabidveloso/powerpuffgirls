@@ -103,6 +103,7 @@ const DetailInfoStyle = styled.section`
       }
     }
     .info {
+      padding: 2rem;
       background-color: hsl(var(--grey));
     }
   }

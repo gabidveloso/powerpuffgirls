@@ -33,7 +33,7 @@ export function fetchDataSeasons() {
 export function fetchDataEpisodes() {
   return async (dispatch: any) => {
     try {
-      const res = await fetch(`https://api.tvmaze.com/shows/1955/episodes`);
+      const res = await fetch('https://api.tvmaze.com/shows/1955/episodes');
 
       const data: IEpisodes[] = await res.json();
 

@@ -1,5 +1,6 @@
 // Import Packages
 import styled from 'styled-components';
+import { device } from '../../GlobalStyles.style';
 
 const TabsStyle = styled.section`
   width: 100%;
@@ -26,6 +27,11 @@ const TabsStyle = styled.section`
     &.active {
       color: hsl(var(--secondary));
     }
+  }
+
+  /* Set Media Queries */
+  @media ${device.tablet} {
+    padding: 1rem 2rem;
   }
 `;
 

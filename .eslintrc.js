@@ -18,8 +18,10 @@ module.exports = {
       'error',
       {
         endOfLine: 'auto',
+        singleQuote: true,
       },
     ],
+    quotes: [2, 'single', { avoidEscape: true }],
     'react/jsx-filename-extension': [0, { extensions: ['.js', '.jsx'] }],
     'react/function-component-definition': [
       2,
